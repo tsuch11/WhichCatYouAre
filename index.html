@@ -315,6 +315,8 @@
       font-size:34px;
       color:#ffffff;
       line-height:1.1;
+      white-space:nowrap;
+      overflow:hidden;
     }
     .result-subtitle{
       margin:0;
@@ -717,12 +719,14 @@
     }
     .intro-story{
       font-size:16px;
-      color:#3E3630;
+      color:#A79A8A;
       line-height:1.8;
       margin:0 0 24px;
+      font-weight:400;
     }
     .intro-story b{
-      color:#3E3630;
+      color:#A79A8A;
+      font-weight:400;
     }
     .intro-name-label{
       font-size:13px;
@@ -820,6 +824,32 @@
       <button class="start-btn" id="startBtn">เริ่มเลย</button>
     </section>
 
+    <!-- ── Intro Story 0: บทนำ ── -->
+    <section class="intro-wrap" id="introStory" style="display:none;">
+      <div class="intro-card">
+        <svg id="introCat0" width="72" height="67" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 12px;image-rendering:pixelated;animation:pawBounce 1.6s ease-in-out infinite;cursor:pointer;">
+          <rect x="1" y="0" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="11" y="0" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="1" y="1" width="12" height="1" fill="#1a1a1a"/>
+          <rect x="0" y="2" width="14" height="5" fill="#1a1a1a"/>
+          <rect x="1" y="7" width="12" height="1" fill="#1a1a1a"/>
+          <rect x="2" y="3" width="2" height="2" fill="#FCF7DF"/>
+          <rect x="10" y="3" width="2" height="2" fill="#FCF7DF"/>
+          <rect x="6" y="5" width="2" height="1" fill="#f4a0a0"/>
+          <rect x="2" y="8" width="10" height="3" fill="#1a1a1a"/>
+          <rect x="2" y="11" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="10" y="11" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="12" y="7" width="1" height="3" fill="#1a1a1a"/>
+          <rect x="13" y="6" width="1" height="2" fill="#1a1a1a"/>
+        </svg>
+        <p class="intro-story">
+          เฮ้... ได้ยินมาว่า<br>
+          มีแมวตัวนึงซ่อนอยู่ในตัวของเธอ
+        </p>
+        <button class="intro-next-btn" id="introStoryBtn">ต่อไป →</button>
+      </div>
+    </section>
+
     <!-- ── Intro Story 1: ถามชื่อ ── -->
     <section class="intro-wrap" id="introName" style="display:none;">
       <div class="intro-card">
@@ -839,7 +869,6 @@
           <rect x="13" y="6" width="1" height="2" fill="#1a1a1a"/>
         </svg>
         <p class="intro-story">
-          เฮ้... มีแมวตัวหนึ่ง<b>ซ่อนอยู่ในตัวเธอ</b><br>
           แต่ก่อนจะรู้ว่ามันคือแมวแบบไหน<br>
           ขอถามหน่อยนะ
         </p>
@@ -849,7 +878,7 @@
       </div>
     </section>
 
-    <!-- ── Intro Story 2: ทักทาย + ปูเรื่อง ── -->
+    <!-- ── Intro Story 2: ทักทาย (ชื่อ + ประโยคแรก) ── -->
     <section class="intro-wrap" id="introGreet" style="display:none;">
       <div class="intro2-card">
         <svg id="introCat2" width="72" height="67" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 12px;image-rendering:pixelated;animation:pawBounce 1.6s ease-in-out infinite;cursor:pointer;">
@@ -870,10 +899,61 @@
         <div class="intro2-name" id="greetName"></div>
         <p class="intro2-text">
           ชื่อเพราะดีนะ ✨<br><br>
-          ว่ากันว่า<em>ทุกคนมีแมวในตัว</em><br>
-          บางทีเราเองยังไม่รู้จักมันเลย<br><br>
-          ลองตอบตามความรู้สึกแรกเลยนะ<br>
-          <em>อย่าคิดมาก แมวในตัวเธอรู้คำตอบอยู่แล้ว 🐾</em>
+          เราคือแมวสักตัวนึงของเธอเอง<br>
+          ยินดีที่ได้รู้จักนะ
+        </p>
+        <button class="intro-next-btn" id="introGreetBtn">ต่อไป →</button>
+      </div>
+    </section>
+
+    <!-- ── Intro Story 3: ว่ากันว่า ── -->
+    <section class="intro-wrap" id="introGreet2" style="display:none;">
+      <div class="intro2-card">
+        <svg id="introCat3" width="72" height="67" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 12px;image-rendering:pixelated;animation:pawBounce 1.6s ease-in-out infinite;cursor:pointer;">
+          <rect x="1" y="0" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="11" y="0" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="1" y="1" width="12" height="1" fill="#1a1a1a"/>
+          <rect x="0" y="2" width="14" height="5" fill="#1a1a1a"/>
+          <rect x="1" y="7" width="12" height="1" fill="#1a1a1a"/>
+          <rect x="2" y="3" width="2" height="2" fill="#FCF7DF"/>
+          <rect x="10" y="3" width="2" height="2" fill="#FCF7DF"/>
+          <rect x="6" y="5" width="2" height="1" fill="#f4a0a0"/>
+          <rect x="2" y="8" width="10" height="3" fill="#1a1a1a"/>
+          <rect x="2" y="11" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="10" y="11" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="12" y="7" width="1" height="3" fill="#1a1a1a"/>
+          <rect x="13" y="6" width="1" height="2" fill="#1a1a1a"/>
+        </svg>
+        <p class="intro2-text">
+          ว่ากันว่าทุกคนมีแมวในตัว<br>
+          บางทีคุณเองอาจจะยังไม่รู้จักมันเลย
+        </p>
+        <button class="intro-next-btn" id="introGreet2Btn">ต่อไป →</button>
+      </div>
+    </section>
+
+    <!-- ── Intro Story 4: ปูเรื่อง + เริ่มเลย ── -->
+    <section class="intro-wrap" id="introGreet3" style="display:none;">
+      <div class="intro2-card">
+        <svg id="introCat4" width="72" height="67" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 12px;image-rendering:pixelated;animation:pawBounce 1.6s ease-in-out infinite;cursor:pointer;">
+          <rect x="1" y="0" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="11" y="0" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="1" y="1" width="12" height="1" fill="#1a1a1a"/>
+          <rect x="0" y="2" width="14" height="5" fill="#1a1a1a"/>
+          <rect x="1" y="7" width="12" height="1" fill="#1a1a1a"/>
+          <rect x="2" y="3" width="2" height="2" fill="#FCF7DF"/>
+          <rect x="10" y="3" width="2" height="2" fill="#FCF7DF"/>
+          <rect x="6" y="5" width="2" height="1" fill="#f4a0a0"/>
+          <rect x="2" y="8" width="10" height="3" fill="#1a1a1a"/>
+          <rect x="2" y="11" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="10" y="11" width="2" height="2" fill="#1a1a1a"/>
+          <rect x="12" y="7" width="1" height="3" fill="#1a1a1a"/>
+          <rect x="13" y="6" width="1" height="2" fill="#1a1a1a"/>
+        </svg>
+        <p class="intro2-text">
+          วันนี้เราเลยมีคำถามสั้นๆ มาลองค้นหาแมวในตัวเธอกัน<br><br>
+          ลองตอบตามความรู้สึกเลยนะ<br>
+          <em>แมวในตัวเธอรู้คำตอบอยู่แล้ว 🐾</em>
         </p>
         <button class="intro-start-btn" id="introStartBtn">พร้อมแล้ว! เริ่มเลย</button>
       </div>
@@ -1042,8 +1122,14 @@
     startBtn.addEventListener("click", () => {
       if(window.sfx8bit) window.sfx8bit();
       landing.style.display = "none";
-      document.getElementById("introName").style.display = "flex";
+      document.getElementById("introStory").style.display = "flex";
       if(window.startBGM) window.startBGM();
+    });
+
+    document.getElementById("introStoryBtn").addEventListener("click", () => {
+      if(window.sfx8bit) window.sfx8bit();
+      document.getElementById("introStory").style.display = "none";
+      document.getElementById("introName").style.display = "flex";
       setTimeout(() => document.getElementById("nameInput").focus(), 300);
     });
 
@@ -1061,6 +1147,20 @@
       document.getElementById("introName").style.display = "none";
       document.getElementById("greetName").textContent = playerName;
       document.getElementById("introGreet").style.display = "flex";
+    });
+
+    // ── Intro 2: ทักทาย → หน้าถัดไป ──
+    document.getElementById("introGreetBtn").addEventListener("click", () => {
+      if(window.sfx8bit) window.sfx8bit();
+      document.getElementById("introGreet").style.display = "none";
+      document.getElementById("introGreet2").style.display = "flex";
+    });
+
+    // ── Intro 3: ว่ากันว่า → หน้าถัดไป ──
+    document.getElementById("introGreet2Btn").addEventListener("click", () => {
+      if(window.sfx8bit) window.sfx8bit();
+      document.getElementById("introGreet2").style.display = "none";
+      document.getElementById("introGreet3").style.display = "flex";
     });
 
     // ── bounce handler สำหรับแมวดำใน intro ──
@@ -1087,15 +1187,18 @@
         } catch(e){}
       });
     }
+    makeIntroCatClickable("introCat0");
     makeIntroCatClickable("introCat1");
     makeIntroCatClickable("introCat2");
+    makeIntroCatClickable("introCat3");
+    makeIntroCatClickable("introCat4");
 
-    // ── Intro 2: ทักทาย → เริ่ม quiz ──
+    // ── Intro 4: ปูเรื่อง → เริ่ม quiz ──
     document.getElementById("introStartBtn").addEventListener("click", () => {
       if(window.sfx8bit) window.sfx8bit();
       const shuffled = shuffleArray(questions);
       questions.splice(0, questions.length, ...shuffled);
-      document.getElementById("introGreet").style.display = "none";
+      document.getElementById("introGreet3").style.display = "none";
       mainWrap.classList.remove("wrap-landing");
       mainWrap.classList.add("wrap");
       quizHead.style.display = "block";
@@ -1270,7 +1373,7 @@
           </div>
           <div class="result-body">
             <div class="result-head">
-              <h2 class="result-title">${playerName ? playerName + ' คือ' : ''}${out.title}</h2>
+              <h2 class="result-title" id="resultTitle">${playerName ? playerName + 'คุณคือ' : 'คุณคือ'}${out.title}</h2>
               <p class="result-subtitle">${out.enTitle || "CAT PERSONALITY"}</p>
             </div>
             <p class="result-desc">${out.desc}</p>
